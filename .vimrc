@@ -15,6 +15,8 @@ set smartcase
 set incsearch
 set laststatus=2
 
+let g:jsx_ext_required = 0
+let g:syntastic_javascript_checkers = ['eslint']
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'powerlineish'
 " let g:airline_section_a = airline#section#create(['mode',' ','branch'])

@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/chasecundiff/.oh-my-zsh
+export ZSH=/Users/chase/.oh-my-zsh
 export EDITOR="VIM"
 
 # enables shims and autocompilartion
@@ -54,11 +54,11 @@ alias gbv='git branch -vv'
 
 # User configuration
 
-export PATH="/opt/chef/embedded/bin:/opt/chefdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/chasecundiff/.chefdk/gem/ruby/2.1.0/bin:/Users/chasecundiff/packer:/Users/chasecundiff/apps/terraform:/Applications/Postgres.app/Contents/Versions/9.4/bin:/Users/chasecundiff/apps/liquibase"
+export PATH="/opt/chef/embedded/bin:/opt/chefdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/chase/.chefdk/gem/ruby/2.1.0/bin:/Users/chase/packer:/Users/chase/apps/terraform:/Applications/Postgres.app/Contents/Versions/9.4/bin:/Users/chase/apps/liquibase:/Users/chase/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source /Users/chasecundiff/private/.zshrc
+source /Users/chase/private/.zshrc
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -118,7 +118,7 @@ function get-chef-data-bag() {
 
 function knife-single-host() {
   case "$1" in
-    or) knife ssh $2 'sudo chef-client' --manual-list --ssh-gateway chase@or.b.sitesentry.co ;;
+    or) knife ssh $2 'sudo chef-client' --manual-list --ssh-gateway chase@or.b.sitesentry.co -x chase ;;
     iad) knife ssh $2 'sudo chef-client' --manual-list --ssh-gateway chase@gw.iad.sourcepoint.net -x chase ;;
     sfo) knife ssh $2 'sudo chef-client' --manual-list --ssh-gateway chase@sfo.bastion.sourcepoint.net -x chase ;;
   esac
